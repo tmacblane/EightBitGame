@@ -1,14 +1,15 @@
 package com.tmacblane.androidgames;
 
-import android.app.Activity;
-import android.os.Bundle;
+import com.tmacblane.androidgames.framework.Screen;
+import com.tmacblane.androidgames.framework.impl.AndroidGame;
 
-public class EightBitGame extends Activity {
+public class EightBitGame extends AndroidGame {
 	
     /** Called when the activity is first created. */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+    public Screen getStartScreen() {
+    	return new LoadingScreen(this);
     }
+    
+    // display main screen controls (new, load, options)
 }
